@@ -1,0 +1,30 @@
+stages:
+  data_ingestion:
+    cmd: python src/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/pipeline/stage_01_data_ingestion.py
+    outs:
+      - data/raw/stroke-data.zip
+      - data/raw/healthcare-dataset-stroke-data.csv
+
+  data_preprocessing:
+    cmd: python src/pipeline/stage_02_data_preprocessing.py
+    deps:
+      - src/pipeline/stage_02_data_preprocessing.py
+    outs:
+      - data/processed/train_stroke.csv
+      - data/processed/test_stroke.csv
+
+  model_train_evaluation:
+    cmd: python src/pipeline/stage_03_training_and_evaluation.py
+    deps:
+      - src/pipeline/stage_03_training_and_evaluation.py
+      - data/processed/train_stroke.csv
+      - data/processed/test_stroke.csv
+
+  log_production_models:
+    cmd: python src/pipeline/stage_04_log_production_model.py
+    deps:
+      - src/pipeline/stage_04_log_production_model.py
+    outs:
+      - saved_models/model.joblib

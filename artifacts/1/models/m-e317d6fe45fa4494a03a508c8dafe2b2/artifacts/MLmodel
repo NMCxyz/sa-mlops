@@ -1,0 +1,22 @@
+artifact_path: file:E:/C/ICT/AAA SelfLearn/SAMLE/End-To-End-MLOps-Project/artifacts/1/models/m-e317d6fe45fa4494a03a508c8dafe2b2/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.4
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.1.1
+model_id: m-e317d6fe45fa4494a03a508c8dafe2b2
+model_size_bytes: 36516810
+model_uuid: m-e317d6fe45fa4494a03a508c8dafe2b2
+prompts: null
+run_id: 02bf560023ac4c63859c1b96f18f9fae
+utc_time_created: '2025-07-20 02:54:10.179978'

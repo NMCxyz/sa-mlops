@@ -1,0 +1,27 @@
+base:
+  project: Stroke Predictor
+  random_state: 42
+  target_col: stroke
+
+data_ingestion:
+  s3_source: https://github.com/FraidoonOmarzai/data/raw/main/stroke-data.zip
+  zip_file_path: data/raw/stroke-data.zip
+  unzip_file_path: data/raw
+
+data_load:
+  dataset_path: data/raw/healthcare-dataset-stroke-data.csv
+
+split_data:
+  train_path: data/processed/train_stroke.csv
+  test_path: data/processed/test_stroke.csv
+  test_size: 0.2
+
+mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: mlops
+  experiment_id: 1
+  run_name: Random_Forest
+  registered_model_name: RF_Register
+  remote_server_uri: http://0.0.0.0:5000
+
+webapp_model_dir: saved_models/model.joblib
