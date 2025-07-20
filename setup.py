@@ -4,7 +4,7 @@ import setuptools
 __version__ = "0.0.1"
 
 SRC_REPO = "End-To-End-MLOps-Project"
-AUTHOR_USER_NAME = "FraidoonOmarzai"
+AUTHOR_USER_NAME = "NMCxyz"
 
 
 setuptools.setup(
